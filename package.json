@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=node ./bin/www",
-    "dev": "DEBUG=dwpcii:server node ./bin/www"
+    "dev": "DEBUG=delete-dwpcll: server node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
