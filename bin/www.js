@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('delete-dwpcII:server');
+var debug = require('debug')('dwpcii:server');
 var http = require('http');
 
 /**
