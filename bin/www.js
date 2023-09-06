@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('delete-dwpcll:server');
+var debug = require('debug')('dwpcii:server');
 var http = require('http');
 
 /**
@@ -30,7 +30,7 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 /**
-into a number, string, or false.
+ * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
@@ -86,5 +86,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('saListening on ' + bind);
+  debug('📢Listening on ' + bind);
 }
+
+
