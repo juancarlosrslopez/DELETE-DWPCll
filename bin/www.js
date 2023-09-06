@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('dwpcii:server');
+var debug = require('debug')('delete-dwpcll:server');
 var http = require('http');
 
 /**
@@ -86,7 +86,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('📢Listening on ' + bind);
+  debug('📢 Listening on ' + bind);
 }
 
 
