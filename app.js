@@ -8,6 +8,7 @@ var debug = require('debug')('test-11sep:server');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var aboutRouter = require('./routes/about');
 
 // Creando la instancia de express
 var app = express();
@@ -33,6 +34,7 @@ app.use('/users', usersRouter);
 /*app.use('/author', (req, res)=>{
   res.json({mainDeveloper: "Juan Carlos & Luis Alfonso"})
 });*/
+app.use('/about', aboutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

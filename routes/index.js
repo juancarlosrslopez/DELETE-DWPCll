@@ -6,6 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'ITGAM', author:"Juan Carlos & Luis Alfonso"});
 });
 
-// Pripio
-
 module.exports = router;
