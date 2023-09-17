@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /users/author
-router.get('/author', function(req, res, next) {
+router.get('/author', function(_, res) {
   res.render('author', {author: "Juan Carlos & Luis Guzman"});
 });
 
