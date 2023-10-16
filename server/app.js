@@ -13,19 +13,17 @@ import morgan from 'morgan';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
+// Importing webpack configuration
+import webpackConfig from '../webpack.dev.config';
 
 // Importing template-engine
 import configTemplateEngine from './config/templateEngine';
 
-// Importing webpack configuration
-import webpackConfig from '../webpack.dev.config';
-
 // Impornting winston logger
 import log from './config/winston';
 
-// Importing subroutes
-import indexRouter from './routes/index';
-import usersRouter from './routes/users';
+// Importando enrutador
+import router from './router';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -50,7 +48,6 @@ if (nodeEnviroment === 'development') {
     'webpack-hot-middleware/client?reload=true&timeout=1000',
     webpackConfig.entry,
   ];
-
   // Creating the bundler
   const bundle = webpack(webpackConfig);
   // Enabling the webpack middleware
@@ -81,9 +78,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Registering routes
-app.use('/', indexRouter);
-
-app.use('/users', usersRouter);
+router.addRoutes(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
