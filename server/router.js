@@ -1,14 +1,16 @@
 import createError from 'http-errors';
-// Impornting winston logger
+// Importing winston logger
 import log from './config/winston';
 
 // Importando enrutador home
 import homeRouter from './domains/home/home.router';
+import userRouter from './user/user.router';
 
 // Función que agrega rutas
 const addRoutes = (app) => {
   // Agregando enrutado de Home
   app.use('/', homeRouter);
+  app.use('/user', userRouter);
 
   // ERRORES
   // catch 404 and forward to error handler
