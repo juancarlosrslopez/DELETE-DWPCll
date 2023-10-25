@@ -1,18 +1,18 @@
 // Importando el Router de Express
 import { Router } from 'express';
+
 // Importando el controlador
 import projectController from './project.controller';
-// Creando una instancia del enrutador
+
+// Creando una isntancia del enrutador
 const router = new Router();
 
 // Enrutamos
+// GET "/project"
+router.get('/', projectController.showDashboard);
 
-// GET '/project/addForm'
-// GET '/project/add'
-// GET '/project'
-router.get(['/', '/projects', '/dashboard'], projectController.projects);
+// GET "/project/add"
+router.get('/add', projectController.add);
 
-// GET '/user/project/["add-form", "add"]
-router.get(['/add-form', '/add'], projectController.forms);
 // Exporto este tramo de ruta
 export default router;
