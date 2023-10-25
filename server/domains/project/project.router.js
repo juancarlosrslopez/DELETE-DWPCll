@@ -4,9 +4,14 @@ import { Router } from 'express';
 import projectController from './project.controller';
 // Creando una instancia del enrutador
 const router = new Router();
+
 // Enrutamos
-// GET '/user/["projects", "dashboard"]
+
+// GET '/project/addForm'
+// GET '/project/add'
+// GET '/project'
 router.get(['/', '/projects', '/dashboard'], projectController.projects);
+
 // GET '/user/project/["add-form", "add"]
 router.get(['/add-form', '/add'], projectController.forms);
 // Exporto este tramo de ruta
