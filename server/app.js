@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
+import mongoose from 'mongoose';
 
 // Setting Webpack Modules
 import webpack from 'webpack';
@@ -22,6 +23,7 @@ import log from './config/winston';
 import router from './router';
 
 import debug from './services/debugLogger';
+import { logger } from 'handlebars';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -65,6 +67,17 @@ if (nodeEnviroment === 'development') {
 
 // Configuring the template engine
 configTemplateEngine(app);
+
+// Database connection Checker Middleware
+app.use((req, res, next) => {
+  if (mongoose.Connection.readyState === 1) {
+    log.info('✅ Verificación de conexión a db exitosa.');
+    next();
+  } else {
+    log.info('🔴 No pasa la verificación de conexión a la BD');
+    res.status(503).render('errors/e503View.hbs', { layout: 'errors' });
+  }
+});
 
 // Se establecen los middlewares
 app.use(morgan('dev', { stream: log.stream }));
