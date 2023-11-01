@@ -23,7 +23,6 @@ import log from './config/winston';
 import router from './router';
 
 import debug from './services/debugLogger';
-import { logger } from 'handlebars';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line

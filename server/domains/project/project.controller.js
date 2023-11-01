@@ -1,7 +1,7 @@
 // Actions methods
 // GET "/project"
-const showDashboard = (req, res) => {
-  res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
+const addForm = (req, res) => {
+  res.render('project/addView');
 };
 
 // GET "/project/add"
@@ -12,6 +12,6 @@ const add = (req, res) => {
 // Controlador user
 export default {
   // Action Methods
-  showDashboard,
+  showDashboard: addForm,
   add,
 };
