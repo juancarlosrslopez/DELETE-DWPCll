@@ -69,7 +69,7 @@ configTemplateEngine(app);
 
 // Database connection Checker Middleware
 app.use((req, res, next) => {
-  if (mongoose.Connection.readyState === 1) {
+  if (mongoose.connection.readyState === 1) {
     log.info('✅ Verificación de conexión a db exitosa.');
     next();
   } else {
