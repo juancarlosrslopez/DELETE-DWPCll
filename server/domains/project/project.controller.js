@@ -11,6 +11,8 @@ const add = (req, res) => {
 
 // POST "/project/add"
 const addPost = (req, res) => {
+  // console.log(req.body);
+  // res.status(200).json({ msg: 'ok' });
   res.status(200).json(req.body);
 };
 
