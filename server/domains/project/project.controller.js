@@ -19,7 +19,6 @@ const addPost = (req, res) => {
   // se le informa al cliente
   if (validationError) {
     log.info('Se entrega al cliente error de validación de add Project');
-    res.status(422).json(validationError);
     // Se desestructuran los datos de validación
     const { value: project } = validationError;
     // Se extraen los campos que fallaron en la validación
