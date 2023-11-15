@@ -8,10 +8,11 @@ const projectSchema = Yup.object().shape({
     .required('Se requiere una descripción del proyecto'),
 });
 
-// Middleware de extración
-const getProyect = (req) => {
+// Creando el extractor de datos de la petición
+const getProject = (req) => {
   // Extrayendo datos de la petición
   const { name, description } = req.body;
+  // Regresando el objeto proyecto
   return {
     name,
     description,
@@ -20,5 +21,5 @@ const getProyect = (req) => {
 
 export default {
   projectSchema,
-  getProyect,
+  getProject,
 };
