@@ -21,4 +21,4 @@ const ProjectSchema = new Schema({
 });
 
 // Compilando el Schema para generar un modelo
-export default mongoose.Model('project', ProjectSchema);
+export default mongoose.model('project', ProjectSchema);
