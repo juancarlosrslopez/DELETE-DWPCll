@@ -5,8 +5,11 @@ import ProjectModel from './project.model';
 
 // Actions methods
 // GET "/project"
-const dashboard = (req, res) => {
-  res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
+const dashboard = async (req, res) => {
+  // Consultado todos los proyectos
+  const projects = await ProjectModel.find({});
+  // Enviando los proyectos al cliente en JSON
+  res.status(200).json(projects);
 };
 
 // GET "/project/add"
