@@ -36,8 +36,12 @@ const registerPost = async (req, res) => {
     // 3. Se contesta al cliente con el usuario creado
     return res.status(200).json(user.toJSON());
   } catch (error) {
-    log.error(error);
-    return res.json({ message: error.message });
+    log.error(error.message);
+    return res.json({
+      message: error.message,
+      name: error.name,
+      errors: error.errors,
+    });
   }
 };
 
